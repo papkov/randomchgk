@@ -8,4 +8,10 @@ players = int(input("Players: "))
 
 paths = generator.player_path_generator(players)
 
+with open("paths.csv", "w") as f:
+    for player in range(0, players):
+        f.write(";".join(paths[player]))
+        f.write("\n")
+
+ex = input("\nPress any key")
 # print(paths.values())
